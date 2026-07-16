@@ -1,17 +1,26 @@
-import FoodItems from './components/FoodItems';
-import ErrorMessage from './components/ErrorMessage';
-import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css";  
+import FoodItems from "./components/FoodItems";
+import ErrorMessage from "./components/ErrorMessage";
+import "./App.css";
+import Container from "./components/Container";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   let foodItems = ["Pizza", "Burger", "Pasta", "Biryani", "Ice Cream"];
-  
 
   return (
     <>
-      <h1>List of food items</h1>
-      <ErrorMessage items={foodItems}></ErrorMessage>
-      <FoodItems items={foodItems}></FoodItems>     
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        <ErrorMessage items={foodItems}></ErrorMessage>
+        <FoodItems items={foodItems}></FoodItems>
+      </Container>
+
+      <Container>
+        <p>
+          Above is the list of healthy foods that are good for your health and
+          well being.
+        </p>
+      </Container>
     </>
   );
 }
