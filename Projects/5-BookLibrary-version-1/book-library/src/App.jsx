@@ -2,8 +2,11 @@ import "./App.css";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
 import BookList from "./components/BookList";
-
+import AvailableBooks from "./components/AvailableBooks";
+import { useState } from "react";
 function App() {
+  const[searchTerm, setSearchTerm] = useState("");
+  console.log(searchTerm);
   const books = [
   {
     id: 1,
@@ -33,10 +36,12 @@ function App() {
 
 
 
+
   return (
     <>
     <Header></Header>
-    <Searchbar></Searchbar>
+    <Searchbar setSearchTerm={setSearchTerm}></Searchbar>
+    <AvailableBooks books={books} searchTerm={searchTerm}></AvailableBooks>
     <BookList books={books}></BookList>
   
     </>

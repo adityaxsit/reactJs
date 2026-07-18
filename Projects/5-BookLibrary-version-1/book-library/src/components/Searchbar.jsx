@@ -1,5 +1,5 @@
 import styles from './Searchbar.module.css'
-function Searchbar() {
+function Searchbar({setSearchTerm}) {
   return (
     <>
     <div className={styles.searchbar}>
@@ -7,6 +7,7 @@ function Searchbar() {
        <input
       type="text"
       placeholder="🔍 Search books..."
+      onChange={(e) => setSearchTerm(e.target.value)}
       />
        
     </div>
